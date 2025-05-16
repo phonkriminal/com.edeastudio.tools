@@ -1,0 +1,16 @@
+{
+    "name": "edeastudio.Shared",
+    "rootNamespace": "",
+    "references": [
+        "GUID:d4349c1f304bc7346b02b5010c91fa32"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,19 @@
+{
+    "name": "edeastudio.Attributes.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:9423aac1534d66743bbb9cb5bec7b55a",
+        "GUID:d4349c1f304bc7346b02b5010c91fa32"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

@@ -1,0 +1,25 @@
+{
+  "name": "com.edeastudio.tools",
+  "displayName": "edea TOOLS",
+  "version": "1.0.0",
+  "author": {
+    "name": "Andrea Salvadori",
+    "email": "edeastudio.pontedera@gmail.com",
+    "url": "http://andreasalvadori.eu"
+  },
+  "unity": "2021.3",
+  "description": "The edeastudio tools, components and utility Bundle",
+  "keywords": [    
+    "Utils",
+    "Shader",
+    "Editor"
+  ],
+  "type": "tool",
+  "dependencies": {
+    "com.unity.mathematics": "1.2.6",
+    "com.unity.burst": "1.6.6",
+    "com.unity.collections": "1.4.0",
+	"com.unity.formats.fbx": "4.1.3",
+	"com.unity.modules.ui": "1.0.0"
+  }
+}

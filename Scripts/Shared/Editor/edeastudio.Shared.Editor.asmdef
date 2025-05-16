@@ -1,0 +1,19 @@
+{
+    "name": "edeastudio.Shared.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:81df1dd7cbc214d4cb7107c47a6e5458",
+        "GUID:d4349c1f304bc7346b02b5010c91fa32"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
