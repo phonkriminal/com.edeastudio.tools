@@ -83,9 +83,6 @@ namespace edeastudio.Editor
 
         #endregion
 
-        /// <summary>
-        /// The e tool bar.
-        /// </summary>
         public class eToolBar
         {
             /// <summary>

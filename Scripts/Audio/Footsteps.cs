@@ -2,7 +2,6 @@ using System.Collections.Generic;
 using edeastudio.Attributes;
 using UnityEngine;
 using edeastudio.Utils;
-using UnityEngine.UI;
 
 namespace edeastudio.Components
 {
@@ -78,23 +77,6 @@ namespace edeastudio.Components
         /// </summary>
         [eLayerMask]
         public LayerMask groundLayer = 1 << 0;
-
-        /// <summary>
-        /// Show debug log.
-        /// </summary>
-        [eEditorToolbar("Debug")]
-        [Space(10)]
-        [SerializeField]
-        private bool showDebugLog = false;
-
-        /// <summary>
-        /// Debug log.
-        /// </summary>
-        [SerializeField]
-        [eLabel(alignment: "UpperLeft", style: "eTextArea")]
-        private string debugLog = "Debug Log";
-
-
 
         /// <summary>
         /// The current surface name.
@@ -183,10 +165,7 @@ namespace edeastudio.Components
 
                 if (rightFootTransform == null)
                 {
-                    if (showDebugLog)
-                    { 
-                        Debug.LogWarning("Right foot transform not found. Please assign it in the inspector."); 
-                    }
+                    Debug.LogWarning("Right foot transform not found. Please assign it in the inspector.");
                 }
             }
 
@@ -208,33 +187,7 @@ namespace edeastudio.Components
         {
             UpdateColliders();
             UpdateFootsteps();
-            UpdateLogInfo();
         }
-
-
-        /// <summary>
-        /// Update log info.
-        /// </summary>
-        private void UpdateLogInfo()
-        {
-            if (showDebugLog)
-            {
-                debugLog = $"Left Foot Collider: {leftFootTransform.name} - Radius: {_leftFootCollider.radius}\n" +
-                           $"Right Foot Collider: {rightFootTransform.name} - Radius: {_rightFootCollider.radius}\n" +
-                           $"Current Surface Name: {_currentSurfaceName}\n" +
-                           $"Walk Sounds Count: {walkSounds?.Length}\n" +
-                           $"Run Sounds Count: {runSounds?.Length}\n" +
-                           $"Land Sounds Count: {landSounds?.Length}\n" +
-                           $"Jump Sounds Count: {jumpSounds?.Length}\n" +
-                           $"Slide Sounds Count: {slideSounds?.Length}";
-            }
-            else
-            {
-                debugLog = "Debug Log Info";
-            }
-        }
-
-
 
         /// <summary>
         /// Get surface name.
@@ -248,10 +201,7 @@ namespace edeastudio.Components
                 {
                     var rtnString = hit.collider.gameObject.GetComponent<MeshCollider>().material.name;
                     rtnString = rtnString.Replace(" (Instance)", string.Empty);
-                    if (showDebugLog)
-                    {
-                        Debug.Log("Footstep surface: " + rtnString);
-                    }
+                    Debug.Log("Footstep surface: " + rtnString);
                     return rtnString;
                 }
             }
@@ -283,11 +233,9 @@ namespace edeastudio.Components
                 landSounds = footsteps.Find(x => x.gameData.SurfaceName == surfaceName)?.gameData.LandSounds;
                 jumpSounds = footsteps.Find(x => x.gameData.SurfaceName == surfaceName)?.gameData.JumpSounds;
                 slideSounds = footsteps.Find(x => x.gameData.SurfaceName == surfaceName)?.gameData.SlideSounds;
-                
-                if (showDebugLog)
-                {
-                    Debug.Log(walkSounds?.Length);
-                }
+
+                Debug.Log(walkSounds.Length);
+
                 _currentSurfaceName = surfaceName;
             }
 
@@ -345,8 +293,6 @@ namespace edeastudio.Components
         {
             if (!GetClipsForSurface(GetSurfaceName())) return;
 
-            if (walkSounds == null) { return; }
-
             AudioClip clip = null;
 
             switch (_footstepType)
@@ -399,10 +345,7 @@ namespace edeastudio.Components
             if (clip && footstepSource)
             {
                 footstepSource.PlayOneShot(clip);
-                if (showDebugLog)
-                {
-                    Debug.Log($"Play Footstep Clip ({clip.name}).");
-                }
+                Debug.Log($"Play Footstep Clip ({clip.name})." );
 
             }
         }

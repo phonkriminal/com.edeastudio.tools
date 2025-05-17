@@ -1,7 +1,5 @@
 using UnityEditor;
-using UnityEngine;
 using edeastudio.Components;
-using edeastudio.Utils;
 
 namespace edeastudio.Utils.Editor
 {
